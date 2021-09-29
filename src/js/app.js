@@ -86,9 +86,10 @@ App = {
   },
 
   signMessage: () => {
+    if($('#message').val() === "") return;
+
     $("#content").hide();
     $("#loader").show();
-
     const message = web3.sha3( $('#message').val() )
     console.log('message', message)
 
